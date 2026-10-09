@@ -4,27 +4,33 @@ export type Category = 'Design' | 'Engineering' | 'Tokens' | 'Accessibility';
 
 export type Post = {
   id: string;
-  category: Category;
+  /** The featured post can carry a label outside the tab categories. */
+  category: Category | 'Dogs';
   title: string;
   excerpt: string;
   author: string;
   initials: string;
   date: string;
   readTime: string;
+  image?: { src: string; alt: string };
 };
 
 export const categories: Category[] = ['Design', 'Engineering', 'Tokens', 'Accessibility'];
 
 export const featured: Post = {
   id: 'code-first',
-  category: 'Engineering',
+  category: 'Dogs',
   title: 'Code first, Figma second: how our library stays in sync',
   excerpt:
     'Every variable, text style and component in our Figma file is generated from the code. Here is the pipeline, the checks that catch drift, and the three things we got wrong on the way.',
-  author: 'Christine Vall',
-  initials: 'CV',
+  author: 'Kelly Campbell',
+  initials: 'KC',
   date: '14 Sep 2026',
   readTime: '9 min read',
+  image: {
+    src: '/blog/featured.jpg',
+    alt: 'A small terrier in an orange coat, sitting on a fluffy blanket on a sofa',
+  },
 };
 
 export const posts: Post[] = [

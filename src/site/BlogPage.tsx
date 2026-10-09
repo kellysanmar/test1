@@ -84,7 +84,13 @@ export function BlogPage() {
           </Tabs.Root>
 
           <Card.Root className={styles.featured}>
-            <div className={styles.featuredImage}>Image 3:2</div>
+            <div className={styles.featuredImage}>
+              {featured.image ? (
+                <img src={featured.image.src} alt={featured.image.alt} />
+              ) : (
+                'Image 3:2'
+              )}
+            </div>
             <div className={styles.featuredBody}>
               <Badge variant="accent">Featured · {featured.category}</Badge>
               <h2 className={styles.featuredTitle}>{featured.title}</h2>

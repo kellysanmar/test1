@@ -390,3 +390,17 @@
   overflow-x: auto;
   scrollbar-width: none;
 }
+
+/* Photo fills the slot; crop matches the Figma image fill (shifted up ~22%). */
+.featuredImage {
+  position: relative;
+}
+
+.featuredImage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
