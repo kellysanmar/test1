@@ -1,0 +1,392 @@
+/*
+ * Blog / Desktop (Figma node 2005:3299).
+ *
+ * OFF-SYSTEM: the Figma frame sets the display headings (64, 36, 32, 40px), the
+ * 22px lede and the page gutters (120 / 96 / 64px) as raw values. No text style
+ * or space token covers them (largest are heading-xl 24px and space-12 48px), so
+ * they are kept raw here to match the design and flagged as a finding.
+ */
+
+.page {
+  min-height: 100vh;
+  background: var(--sds-color-background-default);
+  --gutter: 120px; /* OFF-SYSTEM */
+}
+
+/* ------------------------------------------------------------------ nav */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-space-8);
+  padding: var(--sds-space-4) var(--gutter);
+  background: var(--sds-color-background-surface);
+  border-bottom: 1px solid var(--sds-color-border-default);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-space-2);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.brand,
+.brandText {
+  font-family: var(--sds-typography-title-md-font-family);
+  font-size: var(--sds-typography-title-md-font-size);
+  font-weight: var(--sds-typography-title-md-font-weight);
+  line-height: var(--sds-typography-title-md-line-height);
+  letter-spacing: var(--sds-typography-title-md-letter-spacing);
+  text-transform: var(--sds-typography-title-md-text-transform);
+  color: var(--sds-color-content-default);
+  white-space: nowrap;
+}
+
+.navMenu,
+.footerLinks {
+  flex: 1;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- header */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sds-space-6);
+  padding: 96px var(--gutter) var(--sds-space-12); /* OFF-SYSTEM: 96px */
+}
+
+.title {
+  margin: 0;
+  font-family: var(--sds-typography-heading-xl-font-family);
+  font-size: 64px; /* OFF-SYSTEM */
+  font-weight: var(--sds-typography-heading-xl-font-weight);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--sds-color-content-default);
+}
+
+.lede {
+  margin: 0;
+  max-width: 820px;
+  font-family: var(--sds-typography-body-md-font-family);
+  font-size: 22px; /* OFF-SYSTEM */
+  font-weight: var(--sds-typography-body-md-font-weight);
+  line-height: 1.5;
+  color: var(--sds-color-content-muted);
+}
+
+/* -------------------------------------------------------------- content */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-12);
+  padding: 0 var(--gutter) 96px; /* OFF-SYSTEM: 96px */
+}
+
+/* Featured post: image left, body right. */
+.featured {
+  flex-direction: row;
+  border-color: var(--sds-color-border-default);
+}
+
+.featuredImage,
+.cardImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sds-color-background-sunken);
+  font-family: var(--sds-typography-caption-font-family);
+  font-size: var(--sds-typography-caption-font-size);
+  font-weight: var(--sds-typography-caption-font-weight);
+  line-height: var(--sds-typography-caption-line-height);
+  letter-spacing: var(--sds-typography-caption-letter-spacing);
+  text-transform: var(--sds-typography-caption-text-transform);
+  color: var(--sds-color-content-muted);
+}
+
+.featuredImage {
+  flex: 1;
+  min-height: 400px;
+}
+
+.featuredBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--sds-space-5);
+  padding: var(--sds-space-12);
+}
+
+.featuredTitle {
+  margin: 0;
+  font-family: var(--sds-typography-heading-xl-font-family);
+  font-size: 36px; /* OFF-SYSTEM */
+  font-weight: var(--sds-typography-heading-xl-font-weight);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--sds-color-content-default);
+}
+
+.featuredExcerpt,
+.newsletterText {
+  margin: 0;
+  font-family: var(--sds-typography-body-md-font-family);
+  font-size: var(--sds-typography-body-md-font-size);
+  font-weight: var(--sds-typography-body-md-font-weight);
+  line-height: var(--sds-typography-body-md-line-height);
+  letter-spacing: var(--sds-typography-body-md-letter-spacing);
+  text-transform: var(--sds-typography-body-md-text-transform);
+  color: var(--sds-color-content-muted);
+}
+
+.featuredMeta,
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-space-3);
+}
+
+.author {
+  margin: 0;
+  font-family: var(--sds-typography-label-md-font-family);
+  font-size: var(--sds-typography-label-md-font-size);
+  font-weight: var(--sds-typography-label-md-font-weight);
+  line-height: var(--sds-typography-label-md-line-height);
+  letter-spacing: var(--sds-typography-label-md-letter-spacing);
+  text-transform: var(--sds-typography-label-md-text-transform);
+  color: var(--sds-color-content-default);
+}
+
+.caption {
+  margin: 0;
+  font-family: var(--sds-typography-caption-font-family);
+  font-size: var(--sds-typography-caption-font-size);
+  font-weight: var(--sds-typography-caption-font-weight);
+  line-height: var(--sds-typography-caption-line-height);
+  letter-spacing: var(--sds-typography-caption-letter-spacing);
+  text-transform: var(--sds-typography-caption-text-transform);
+  color: var(--sds-color-content-muted);
+}
+
+/* --------------------------------------------------------- latest posts */
+
+.latest {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-6);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--sds-typography-heading-xl-font-family);
+  font-size: 32px; /* OFF-SYSTEM */
+  font-weight: var(--sds-typography-heading-xl-font-weight);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--sds-color-content-default);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sds-space-6);
+}
+
+.cardImage {
+  aspect-ratio: 16 / 9;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sds-space-3);
+  padding: var(--sds-space-6);
+}
+
+.cardMeta {
+  padding-top: var(--sds-space-2);
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+}
+
+/* ----------------------------------------------------------- newsletter */
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-space-12);
+  padding: 64px; /* OFF-SYSTEM */
+  background: var(--sds-color-background-accent-subtle);
+  border: 1px solid var(--sds-color-border-accent);
+  border-radius: var(--sds-radius-lg);
+}
+
+.newsletterCopy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-4);
+}
+
+.overline {
+  margin: 0;
+  font-family: var(--sds-typography-overline-font-family);
+  font-size: var(--sds-typography-overline-font-size);
+  font-weight: var(--sds-typography-overline-font-weight);
+  line-height: var(--sds-typography-overline-line-height);
+  letter-spacing: var(--sds-typography-overline-letter-spacing);
+  text-transform: var(--sds-typography-overline-text-transform);
+  color: var(--sds-color-content-accent);
+}
+
+.newsletterTitle {
+  margin: 0;
+  font-family: var(--sds-typography-heading-xl-font-family);
+  font-size: 40px; /* OFF-SYSTEM */
+  font-weight: var(--sds-typography-heading-xl-font-weight);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--sds-color-content-default);
+}
+
+.form {
+  width: 480px;
+  flex-shrink: 0;
+  padding: var(--sds-space-8);
+  background: var(--sds-color-background-surface);
+  border-radius: var(--sds-radius-lg);
+  box-shadow: var(--sds-elevation-raised);
+}
+
+.formInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-4);
+}
+
+.fieldRow {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sds-space-3);
+}
+
+.field {
+  flex: 1;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- footer */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-space-6);
+  padding: var(--sds-space-12) var(--gutter);
+  background: var(--sds-color-background-surface);
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-space-8);
+}
+
+/* ----------------------------------------------- responsive (not in Figma) */
+
+@media (max-width: 64rem) {
+  .page {
+    --gutter: var(--sds-space-8);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .newsletter {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--sds-space-8);
+  }
+
+  .form {
+    width: auto;
+  }
+}
+
+@media (max-width: 48rem) {
+  .page {
+    --gutter: var(--sds-space-4);
+  }
+
+  .nav,
+  .footerRow {
+    flex-wrap: wrap;
+    gap: var(--sds-space-3);
+  }
+
+  .navMenu {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .header {
+    padding-top: var(--sds-space-12);
+  }
+
+  .title {
+    font-size: 40px; /* OFF-SYSTEM */
+  }
+
+  .lede {
+    font-size: var(--sds-typography-body-md-font-size);
+  }
+
+  .featured {
+    flex-direction: column;
+  }
+
+  .featuredImage {
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  .featuredBody {
+    padding: var(--sds-space-6);
+  }
+
+  .featuredTitle,
+  .sectionTitle,
+  .newsletterTitle {
+    font-size: 28px; /* OFF-SYSTEM */
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fieldRow {
+    flex-wrap: wrap;
+  }
+}
+
+.navAction {
+  margin-left: auto;
+}
+
+/* Lets the topic tabs scroll sideways on narrow screens instead of clipping. */
+.tabList {
+  overflow-x: auto;
+  scrollbar-width: none;
+}

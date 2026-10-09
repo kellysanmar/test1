@@ -29,3 +29,5 @@ storybook-static
 
 # Scratch
 _to_delete
+.vercel
+.env*
